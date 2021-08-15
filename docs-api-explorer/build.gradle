@@ -1,0 +1,31 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.2'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+	id 'java-library'
+}
+
+group = 'com.jrq'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+	testImplementation group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+	annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+	testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation group: 'org.codehaus.jackson', name: 'jackson-mapper-asl', version: '1.9.13'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+	useJUnitPlatform()
+}
